@@ -1,11 +1,10 @@
 // script.js
 window.addEventListener('scroll', function() {
     const video = document.getElementById('background-video');
-    const content = document.getElementById('main-content');
+    const content = document.getElementById('content');
     let scrollPosition = window.scrollY;
-    let blurValue = (scrollPosition > 100) ? (scrollPosition - 100) * 0.05 : 0; // Delays blurring until 100px scroll
-    blurValue = Math.min(blurValue, 10); // Cap the blur effect at 10px
-    video.style.filter = `blur(${blurValue}px)`;
+    let blurValue = (scrollPosition > 100) ? (scrollPosition - 100) * 0.1 : 0; // Adjust blur calculation if needed
+    video.style.filter = `blur(${Math.min(blurValue, 10)}px)`;
 
-    content.style.opacity = (scrollPosition > 100) ? '1' : '0'; // Content fades in after 100px scroll
+    content.style.opacity = (scrollPosition > 100) ? '1' : '0'; // Fade in content after 100px of scrolling
 });
